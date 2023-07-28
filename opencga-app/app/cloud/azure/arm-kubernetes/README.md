@@ -2,13 +2,13 @@
 
 This document contains information related to the deployment of OpenCGA to Azure using ARM automation scripts.
 
-Note that you cannot use a free Azure subscription to deploy this infra; the issue is that you will not be able to deploy the minimum nodes required for AKS and HDInsight (free has a limited number of nodes).  You will need to upgrade the subscription to a paid subscription (eg Pay as you go).
+Note that you cannot use a free Azure subscription to deploy this infra; the issue is that you will not be able to deploy the minimum nodes required for AKS and HDInsight (free has a limited number of nodes).  You will need to upgrade the subscription to a paid subscription (eg `Pay as you go`).
 
 ## Deploy to Azure
 
 ### Deciding what to deploy and configuring the deploy
 
-This deployment is highly customisable. The customisation is done via modifying or making a copy of `azure-deply.parameters.json`, refering to settings in the top level `auzredeploy.json`. Some notes:
+This deployment is highly customisable. The customisation is done via modifying or making a copy of `azure-deply.parameters.json`, refering to settings in the top level `azuredeploy.json`. Some notes:
 
 * If you plan to deploy solr and mongodb as kubernetes resource, set `deploySolr` and `deployMongoDB` to `false` (default is `true`), otherwise these will be implemented as VM deployments.
 * If you want additional kubernetes node groups for solr and mongodb, set `deploySolrAksPool` and/or `deployMongoDBAksPool` to `true` (default is `false`).
@@ -47,7 +47,7 @@ $ ./createsp.sh "Azure subscription 1" tsl-aks
 ```
 $ ./deploy.sh -s "Azure subscription 1" --af azuredeploy.parameters.modified.json --spf azuredeploy.servicePrincipal.parameters.json
 ```
-6. Step 5 may not work first time; it can be run again and again until you have all issues resolved. Note that You may need to cleanup some resources manually in azure, depending on what fails to deploy. For clean in azure, just delete the resource groups, delting the networking one last.
+6. Step 5 may not work first time; it can be run again and again until you have all issues resolved. Note that You may need to cleanup some resources manually in azure, depending on what fails to deploy. For cleanup in azure after testing, just delete the resource groups (delete the networking one last).
 
 ## Deploy without User Access Administrator role
 
