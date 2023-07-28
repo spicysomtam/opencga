@@ -47,7 +47,7 @@ $ ./createsp.sh "Azure subscription 1" tsl-aks
 ```
 $ ./deploy.sh -s "Azure subscription 1" --af azuredeploy.parameters.modified.json --spf azuredeploy.servicePrincipal.parameters.json
 ```
-6. Step 5 may not work first time; it can be run again and again until you have all issues resolved. Note that You may need to cleanup some resources manually in azure, depending on what fails to deploy. For cleanup in azure after testing, just delete the resource groups (delete the networking one last).
+6. Step 5 may not work first time; it can be run again and again until you have all issues resolved. Note that you may need to cleanup some resources manually in azure, depending on what fails to deploy. For cleanup in azure after testing, just delete the resource groups (delete the networking one last).
 
 ## Deploy without User Access Administrator role
 
