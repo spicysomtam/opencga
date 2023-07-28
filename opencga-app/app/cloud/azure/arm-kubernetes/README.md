@@ -2,14 +2,52 @@
 
 This document contains information related to the deployment of OpenCGA to Azure using ARM automation scripts.
 
+Note that you cannot use a free Azure subscription to deploy this infra; the issue is that you will not be able to deploy the minimum nodes required for AKS (free has a limited number of nodes) and HDInsight. You will need to upgrade the subscription to Pay as you go.
+
 ## Deploy to Azure
+
+### Deciding what to deploy and configuring the deploy
+
+This deployment is highly customisable. The customisation is done via modifying or making a copy of `azure-deply.parameters.json`, refering to settings in the top level `auzredeploy.json`. Some notes:
+
+* If you plan to deploy solr and mongodb as kubernetes resource, set `deploySolr` and `deployMongoDB` to `false` (default is `true`), otherwise these will be implemented as VM deployments.
+* If you want additional kubernetes node groups for solr and mongodb, set `deploySolrAksPool` and/or `deployMongoDBAksPool` to `true` (default is `false`).
+* Note that `sshAdminKeyData` and other ssh keys, the data is a regular ssh public key. Although the variable is `securestring`, you pass it as text. Example:
+```
+"value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDnO/1x34ay8snW0lJF+fcmEXML++zBXnhOTNGeTPHxKBN3qTFM7WfuUEfnZbBffT3ZQrx4K8AjWPsuzKXOCytuyljxEL+1YsA9UveH5rUmv6CNlCPkyB+cDAR0oNjJrBZqwaesRAlU2kXZBafptxRP86VX8ntXthx2i/A/rzfibXR7YipdaKruMZGEV8lDywUr6o8Y+Jqj+VHiIIyEG7jJR09KbZqb4HTbXIzwOSTUwdw5fQHeU3+S+oR3z5Tv8gqJxbz7a0dE2S/Xzp7kjhx1cnzg6LuKmkd/E0dOHN/V5PRc/ZzHrOkDZk3A0h5T3vKErg0aW7Y0QTdykU9jem+kiloF40IgNtbMWs3LTUVDzFPwrLGevhawZi4txyuzy20oSUj2w560gtvUqLK9WpMkvisl/nztDwZKfuNWMo6g0Gu7cVKF+J2KaxNnjtIXIzFSy5PyIKCfEFATuiXbyWltNokk8wbaytA+ubzIZnVJGsFntg1tQ/M9UAISii70z+E= user@example.com"
+```
+* Over time the kubernetes version will increase and old versions will no longer be available in azure. Thus you may need to update `kubernetesVersion`.
+* The default for `HDInsightSqlServerName` of `hadoopmysql` did not work (already exists?); I had to call it something else (`hadoopmysql-0`) in `azuredeploy.parameters.json`. There is still a dns name issue in this (to be fixed) but most of the hdinsight deploys.
+* You can see the T shirt sizes for small/medium/large in the top level `azuredeploy.json` if you search for `customDeploymentSize`. Once you determine these, you can customise them.
+
+I have included `azuredeploy.parameters.modified.json` which allows to deploy a small aks and hdinsight environment, ready to deploy everything else for OpenCGA as kubernetes resources (use the files under `./opencga-app/app/cloud/kubernetes`).
+
 
 ### With `az cli`
 
-1. Clone the repository and move into the `ARM Kubernetes` directory with `cd ./opencga-app/app/scripts/azure/arm-kubernetes`.
-2. Using your editor fill in the `azuredeploy.parameters.json` with the required parameters
-3. Create  service principal for Azure Kubernetes Service (AKS) by running `./createsp.sh`
-4. Deploy Open CGA using the command `./deploy.sh <subscription_name> <main-azuredeploy-parameters-json> [<service-principal-azuredeploy-parameters-json>]` . The file `<service-principal-azuredeploy-parameters-json>` is optional, and could be merged with the main parameters file.
+1. Clone the repository and move into the `ARM Kubernetes` directory with: 
+```
+$ cd ./opencga-app/app/cloud/azure/arm-kubernetes
+```
+2. Using your editor fill in the `azuredeploy.parameters.json` with the required parameters.
+3. Login to azure using the command line (`az login`), list subscriptions, and select the subscription to use (we will use `"Azure subscription 1"`):
+```
+$ az login
+$ az account list --output table
+Name                  CloudName    SubscriptionId                        TenantId                              State    IsDefault
+--------------------  -----------  ------------------------------------  ------------------------------------  -------  -----------
+Pay-As-You-Go         AzureCloud   0cbdaaa4-5256-40dc-8267-3cc797c1f422  2f2649bb-2ae6-4aa6-9615-bac743053e8d  Enabled  False
+Azure subscription 1  AzureCloud   db9dddd2-1841-4d53-b9ce-0e83641192cf  7cb5e969-f522-45f7-a05c-d823b75cbde4  Enabled  True
+```
+4. Create  service principal for Azure Kubernetes Service (AKS) by running: 
+```
+$ ./createsp.sh "Azure subscription 1" tsl-aks
+```
+5. Deploy Open CGA to azure using the command:
+```
+$ ./deploy.sh -s "Azure subscription 1" --af azuredeploy.parameters.json --spf azuredeploy.servicePrincipal.parameters.json
+```
+6. Step 5 is unlikely to work first time; it can be run again and again until you have all issues resolved. Note that You may need to cleanup some resources manually in azure, depending on what fails to deploy.
 
 ## Deploy without User Access Administrator role
 

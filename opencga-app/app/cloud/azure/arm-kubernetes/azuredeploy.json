@@ -96,7 +96,7 @@
             }
         },
         "kubernetesVersion": {
-            "defaultValue": "1.22.4",
+            "defaultValue": "1.27.3",
             "type": "string",
             "metadata": {
                 "description": "The version of Kubernetes."
@@ -126,28 +126,28 @@
         },
         "deploySolr" : {
             "type": "bool",
-            "defaultValue": "true",
+            "defaultValue": true,
             "metadata": {
                 "description": "Deploy a Solr database"
             }
         },
         "deploySolrAksPool": {
             "type": "bool",
-            "defaultValue": "false",
+            "defaultValue": false,
             "metadata": {
                 "description": "Deploy a K8s pool of VMs dedicated for Solr"
             }
         },
         "deployMongoDB" : {
             "type": "bool",
-            "defaultValue": "true",
+            "defaultValue": true,
             "metadata": {
                 "description": "Deploy a MongoDB database"
             }
         },
         "deployMongoDBAksPool": {
             "type": "bool",
-            "defaultValue": "false",
+            "defaultValue": false,
             "metadata": {
                 "description": "Deploy a K8s pool of VMs dedicated for MongoDB"
             }

@@ -219,7 +219,7 @@ rm -rf "${artifactsBlobUpdate:?}"/*
 if [ "$keepTmpFiles" == "false" ]; then
   trap 'rm -rf "${artifactsBlobUpdate:?}"' EXIT
 fi
-cp -r $(ls | grep -v "ARTIFACTS_BLOB_UPDATE\|parameters\|deployment-outputs") "${artifactsBlobUpdate}"
+cp -r $(ls | grep -v "ARTIFACTS_BLOB_UPDATE\|parameters\|deployment-outputs\|deploy-") "${artifactsBlobUpdate}"
 
 az storage blob upload-batch \
   --destination $templateContainer \

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "_artifactsLocation": {
+            "value": ""
+        },
+        "_artifactsLocationSasToken": {
+            "value": ""
+        },
+        "clusterName": {
+            "value": "opencga"
+        },
+        "location": {
+            "value": "uksouth"
+        },
+        "deploymentSize": {
+            "value": 1
+        },
+        "HDInsightClusterLoginPassword": {
+            "value": "TSLAzurePoc1!"
+        },
+        "deploySolr": {
+            "value": false
+        },
+        "deployMongoDB": {
+            "value": false
+        },
+        "loginNode": {
+            "value": false
+        },
+        "HDInsightSshPassword": {
+            "value": "TSLAzurePoc1!"
+        },
+        "HDInsightSqlPassword": {
+            "value": "TSLAzurePoc1!"
+        },
+        "openCgaAdminPassword": {
+            "value": "TSLAzurePoc1!"
+        },
+        "mongoDBPassword": {
+            "value": "TSLAzurePoc1!"
+        },
+        "HDInsightSqlServerName": {
+            "value": "hadoopmysql-0"
+        },
+        "sshAdminKeyData": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDnO/1x34ay8snW0lJF+fcmEXML++zBXnhOTNGeTPHxKBN3qTFM7WfuUEfnZbBffT3ZQrx4K8AjWPsuzKXOCytuyljxEL+1YsA9UveH5rUmv6CNlCPkyB+cDAR0oNjJrBZqwaesRAlU2kXZBafptxRP86VX8ntXthx2i/A/rzfibXR7YipdaKruMZGEV8lDywUr6o8Y+Jqj+VHiIIyEG7jJR09KbZqb4HTbXIzwOSTUwdw5fQHeU3+S+oR3z5Tv8gqJxbz7a0dE2S/Xzp7kjhx1cnzg6LuKmkd/E0dOHN/V5PRc/ZzHrOkDZk3A0h5T3vKErg0aW7Y0QTdykU9jem+kiloF40IgNtbMWs3LTUVDzFPwrLGevhawZi4tAno9w8XoSUj2w560gtvUqLK9WpMkvisl/nztDwZKfuNWMo6g0Gu7cVKF+J2KaxNnjtIXIzFSy5PyIKCfEFATuiXbyWltNokk8wbaytA+ubzIZnVJGsFntg1tQ/M9UAISii70z+E= user@theserverlabs.com"
+        }
+    }
+}
