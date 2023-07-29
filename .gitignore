@@ -100,3 +100,5 @@ venv
 
 # Java annotation processor (APT)
 .factorypath
+
+opencga-app/app/cloud/azure/arm-kubernetes/azuredeploy.servicePrincipal.parameters.json
