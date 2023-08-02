@@ -9,7 +9,7 @@
             "value": ""
         },
         "clusterName": {
-            "value": "opencga"
+            "value": "dev-opencga"
         },
         "location": {
             "value": "uksouth"
