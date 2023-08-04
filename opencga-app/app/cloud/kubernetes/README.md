@@ -21,11 +21,11 @@ The opencga helm chart is a large chart and deploys the following components:
 
 # Preparation
 
-You will need a kubernetes cluster (eg AKS); the hadoop cluster is optional but required from prod deployments (eg HDInsight in Azure). You can deploy these for Azure from the `cloud/arm-kubernetes` folder.
+You will need a kubernetes cluster (eg AKS); the hadoop cluster is optional but required for prod deployments (eg HDInsight in Azure). You can deploy these for Azure from the `cloud/arm-kubernetes` folder.
 
-You will need to run the build for Opencga, preferably selecting a tagged release (or use the SNAPSHOT release in `develop` branch but this won't have public opencga docker images that can be pulled from docker hub).
+You will need to run the build for Opencga, preferably selecting a tagged release (or use the SNAPSHOT release in the `develop` branch but this won't have public opencga docker images that can be pulled from docker hub).
 
-Switch to the `build/cloud/kubernetes` folder; the Helm charts will have the correct `AppVersion` set for the Opencga release (hence why you need to build Opencga).
+Switch to the `build/cloud/kubernetes` folder; the Helm charts will have the correct `AppVersion` set for the Opencga release (hence why you need to build Opencga and use the build configuration).
 
 You will need to prepare a `values.yaml` file; you can use the defaults in the `charts\<chart>` folders (append all the `values.yaml` files together). Ideally this `values.yaml` will have configuration for all the charts, but this difficult to get right initially, so copy one of the deployments (eg iva) and use that as a basis for building up the configuration.
 
@@ -35,7 +35,7 @@ As mentioned earlier you will need a kubernetes cluster, and have setup credenti
 
 # Deploying
 
-Here are the args you can pass to setup-k8s.sh:
+Here are the args you can pass to `setup-k8s.sh`:
 ```
 $ cd build/cloud/kubernetes
 $  ./setup-k8s.sh 
