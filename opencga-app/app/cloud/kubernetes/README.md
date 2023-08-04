@@ -23,7 +23,7 @@ The opencga helm chart is a large chart and deploys the following components:
 
 You will need a kubernetes cluster (eg AKS); the hadoop cluster is optional but required from prod deployments (eg HDInsight in Azure). You can deploy these for Azure from the `cloud/arm-kubernetes` folder.
 
-You will need to run the build for Opencga, preferably selecting a tagged release (or use the SNAPSHOT release in `deveop` branch but this won't have public opencga docker images).
+You will need to run the build for Opencga, preferably selecting a tagged release (or use the SNAPSHOT release in `develop` branch but this won't have public opencga docker images that can be pulled from docker hub).
 
 Switch to the `build/cloud/kubernetes` folder; the Helm charts will have the correct `AppVersion` set for the Opencga release (hence why you need to build Opencga).
 
@@ -87,7 +87,7 @@ wait.go:48: [debug] beginning wait for 8 resources with timeout of 10m0s
 ready.go:268: [debug] PersistentVolumeClaim is not bound: minikube/pvc-iva-ivaconf
 ```
 
-Note this may not go well first time; you may need to debug the deployment, see where its failing, and then update your `values.yaml`.
+Note this may not go well first time; you may need to debug the deployment, see where its failing, and then update your `values.yaml` or the Helm chart.
 
 ```
 $ helm list
