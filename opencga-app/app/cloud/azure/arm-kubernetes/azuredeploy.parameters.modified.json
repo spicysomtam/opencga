@@ -15,7 +15,37 @@
             "value": "uksouth"
         },
         "deploymentSize": {
-            "value": 1
+            "value": 0
+        },
+        "customDeploymentSize": {
+          "value": {
+            "type": "0 = CustomSize",
+              "aks": {
+                "nodeCount": 3,
+                "nodeSize": "Standard_D2s_v3",
+                "diskSizeGB": 20,
+                "maxJobsPoolAgents": 1,
+                "aksJobsAgentVMSize": "Standard_D2s_v3",
+                "aksMongodbAgentVMSize": "Standard_D2s_v3",
+                "aksSolrAgentVMSize": "Standard_D2s_v3"
+              },
+              "hdInsight": {
+                "zookeeper": {
+                  "nodeCount": 3,
+                  "nodeSize": "Standard_D2_V2"
+                },
+                "head": {
+                  "nodeCount": 1,
+                  "nodeSize": "Standard_D2_v2"
+                },
+                "worker": {
+                  "nodeCount": 1,
+                  "nodeSize": "Standard_D2_v2"
+                },
+                "yarnSiteMemoryInMb": 7000,
+                "enableHBaseAcceleratedWrites": false
+              }
+          }
         },
         "HDInsightClusterLoginPassword": {
             "value": "TSLAzurePoc1!"

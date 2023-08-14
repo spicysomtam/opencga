@@ -738,41 +738,6 @@
                                     "id": "[parameters('subnetId')]"
                                 }
                             }
-                        },
-                        {
-                            "apiVersion": "2019-05-01",
-                            "name": "SqlServerEndpointDnsRecords",
-                            "type": "Microsoft.Resources/deployments",
-                            "dependsOn": [
-                                "privatelink.database.windows.net"
-                            ],
-                            "properties": {
-                                "mode": "Incremental",
-                                "templatelink": {
-                                    "contentVersion": "1.0.0.0",
-                                    "uri": "[variables('privateDnsForPrivateEndpointTemplateLink')]"
-                                },
-                                "parameters": {
-                                    "privateDnsName": {
-                                        "value": "privatelink.database.windows.net"
-                                    },
-                                    "privateEndpointNicResourceId": {
-                                        "value": "[reference(resourceId('Microsoft.Network/privateEndpoints', variables('privateEndpointName')), '2019-04-01').networkInterfaces[0].id]"
-                                    },
-                                    "nicRecordsTemplateUri": {
-                                        "value": "[variables('privateDnsForPrivateEndpointNicTemplateLink')]"
-                                    },
-                                    "ipConfigRecordsTemplateUri": {
-                                        "value": "[variables('privateDnsForPrivateEndpointIpConfigTemplateLink')]"
-                                    },
-                                    "uniqueId": {
-                                        "value": "[uniqueString(resourceGroup().id)]"
-                                    },
-                                    "existingRecords": {
-                                        "value": {}
-                                    }
-                                }
-                            }
                         }
                     ]
                 }
