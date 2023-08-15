@@ -355,15 +355,15 @@
                 "hdInsight": {
                     "zookeeper": {
                         "nodeCount": 3,
-                        "nodeSize": "Standard_D2_V2"
+                        "nodeSize": "Standard_D2_v2"
                     },
                     "head": {
                         "nodeCount": 2,
-                        "nodeSize": "Standard_D4_v2"
+                        "nodeSize": "Standard_D3_v2"
                     },
                     "worker": {
-                        "nodeCount": 3,
-                        "nodeSize": "Standard_D3_v2"
+                        "nodeCount": 1,
+                        "nodeSize": "Standard_D4_v2"
                     },
                     "yarnSiteMemoryInMb": 7000,
                     "enableHBaseAcceleratedWrites": false
