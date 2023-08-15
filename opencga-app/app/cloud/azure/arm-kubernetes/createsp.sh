@@ -24,7 +24,7 @@ spdetails=$(az ad sp create-for-rbac --years 5 -n "$spname" --skip-assignment)
 sleep 10
 aksServicePrincipalAppId=$(echo "$spdetails" | jq -r '.appId')
 aksServicePrincipalClientSecret=$(echo "$spdetails" | jq -r '.password')
-aksServicePrincipalObjectId=$(az ad sp show --id "$aksServicePrincipalAppId" --query "objectId" -o tsv)
+aksServicePrincipalObjectId=$(az ad sp show --id "$aksServicePrincipalAppId" --query "id" -o tsv)
 
 
 cd -
