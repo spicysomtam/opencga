@@ -329,12 +329,12 @@
                 "type": "1 = Small",
                 "aks": {
                     "nodeCount": 3,
-                    "nodeSize": "Standard_D2s_v3",
+                    "nodeSize": "Standard_D2_v4",
                     "diskSizeGB": 256,
                     "maxJobsPoolAgents": 1,
-                    "aksJobsAgentVMSize": "Standard_D8s_v3",
-                    "aksMongodbAgentVMSize": "Standard_D8s_v3",
-                    "aksSolrAgentVMSize": "Standard_D8s_v3"
+                    "aksJobsAgentVMSize": "Standard_D2_v4",
+                    "aksMongodbAgentVMSize": "Standard_D2_v4",
+                    "aksSolrAgentVMSize": "Standard_D2_v4"
                 },
                 "solr": {
                     "ha": false,
