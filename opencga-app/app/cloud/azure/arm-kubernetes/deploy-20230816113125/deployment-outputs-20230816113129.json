@@ -1,0 +1,743 @@
+{
+  "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/providers/Microsoft.Resources/deployments/dev-opencga-2023-08-16-11.31.29-R31555",
+  "location": "uksouth",
+  "name": "dev-opencga-2023-08-16-11.31.29-R31555",
+  "properties": {
+    "correlationId": "9f85f837-1455-4f25-9874-54fa31c44693",
+    "debugSetting": null,
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "vnet",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/dns",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "dns",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/storageaccount",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "storageaccount",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loganalytics",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "loganalytics",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight",
+            "resourceName": "dev-opencga-hdinsight",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loganalytics",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "loganalytics",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Resources/deployments/hdinsight",
+        "resourceGroup": "dev-opencga-hdinsight",
+        "resourceName": "hdinsight",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/appinsights",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "appinsights",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loganalytics",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "loganalytics",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/aks",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "aks",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loganalytics",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "loganalytics",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loginNode",
+        "resourceGroup": "dev-opencga",
+        "resourceName": "loginNode",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/dns",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "dns",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loganalytics",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "loganalytics",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-solr/providers/Microsoft.Resources/deployments/solr",
+        "resourceGroup": "dev-opencga-solr",
+        "resourceName": "solr",
+        "resourceType": "Microsoft.Resources/deployments"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/vnet",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "vnet",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga",
+            "resourceName": "dev-opencga",
+            "resourceType": "Microsoft.Resources/resourceGroups"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/dns",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "dns",
+            "resourceType": "Microsoft.Resources/deployments"
+          },
+          {
+            "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Resources/deployments/loganalytics",
+            "resourceGroup": "dev-opencga",
+            "resourceName": "loganalytics",
+            "resourceType": "Microsoft.Resources/deployments"
+          }
+        ],
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-mongodb/providers/Microsoft.Resources/deployments/mongodb",
+        "resourceGroup": "dev-opencga-mongodb",
+        "resourceName": "mongodb",
+        "resourceType": "Microsoft.Resources/deployments"
+      }
+    ],
+    "duration": "PT23M23.7792686S",
+    "error": null,
+    "mode": "Incremental",
+    "onErrorDeployment": null,
+    "outputResources": [
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.ContainerService/managedClusters/dev-opencga-aks",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.ContainerService/managedClusters/dev-opencga-aks/agentPools/jobs",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.ContainerService/managedClusters/dev-opencga-aks/agentPools/mongodb",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.ContainerService/managedClusters/dev-opencga-aks/agentPools/solr",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Insights/components/opencgaappinsights",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/networkSecurityGroups/nsg-dev-opencga-hdi",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/networkSecurityGroups/nsg-dev-opencga-login",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/privateDnsZones/dev-opencga.zone",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/privateDnsZones/dev-opencga.zone/virtualNetworkLinks/dev-opencga-vnet-link",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net/virtualNetworkLinks/hnpyjwpw4uygc",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/privateEndpoints/devopencgapakq7e37qbmainprivatelink",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/privateEndpoints/devopencgapakq7e37qbmainprivatelink/privateDnsZoneGroups/default",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet/providers/Microsoft.Authorization/roleAssignments/9ccb9552-c7e1-5297-b532-a9a3a2bbc8a2",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet/subnets/aci",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet/subnets/kubernetes/providers/Microsoft.Authorization/roleAssignments/78acceb1-43e3-5d6d-85cc-aac96b7f4355",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet/subnets/mongodb",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet/subnets/solr",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationalInsights/workspaces/dev-opencgapakq7e37qbxrw",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationalInsights/workspaces/dev-opencgapakq7e37qbxrw/dataSources/Linux",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationalInsights/workspaces/dev-opencgapakq7e37qbxrw/dataSources/LinuxPerfCollection",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationalInsights/workspaces/dev-opencgapakq7e37qbxrw/dataSources/Syslog",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationalInsights/workspaces/dev-opencgapakq7e37qbxrw/dataSources/SyslogCollection",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationsManagement/solutions/AzureAppGatewayAnalytics(dev-opencgapakq7e37qbxrw)",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationsManagement/solutions/Containers(dev-opencgapakq7e37qbxrw)",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationsManagement/solutions/HDInsight(dev-opencgapakq7e37qbxrw)",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationsManagement/solutions/InfrastructureInsights(dev-opencgapakq7e37qbxrw)",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationsManagement/solutions/Security(dev-opencgapakq7e37qbxrw)",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.OperationsManagement/solutions/ServiceMap(dev-opencgapakq7e37qbxrw)",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbmain",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbmain/fileServices/default/shares/analysisconf",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbmain/fileServices/default/shares/conf",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbmain/fileServices/default/shares/ivaconf",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbmain/fileServices/default/shares/sessions",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbmain/fileServices/default/shares/variants",
+        "resourceGroup": "dev-opencga"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.HDInsight/clusters/devopencgapakq7e37qbxrw",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.HDInsight/clusters/devopencgapakq7e37qbxrw/providers/Microsoft.Insights/diagnosticSettings/devopencgapakq7e37qbxrw",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.ManagedIdentity/userAssignedIdentities/hdinsight-storage-identity",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Network/privateDnsZones/azurehdinsight.net",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Network/privateDnsZones/azurehdinsight.net/A/devopencgapakq7e37qbxrw",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Network/privateDnsZones/azurehdinsight.net/A/devopencgapakq7e37qbxrw-int",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Network/privateDnsZones/azurehdinsight.net/A/devopencgapakq7e37qbxrw-ssh",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Network/privateDnsZones/azurehdinsight.net/virtualNetworkLinks/hnpyjwpw4uygc",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbhdi",
+        "resourceGroup": "dev-opencga-hdinsight"
+      },
+      {
+        "id": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga-hdinsight/providers/Microsoft.Storage/storageAccounts/devopencgapakq7e37qbhdi/providers/Microsoft.Authorization/roleAssignments/9dd7803e-39e5-5ac9-b90b-5eb4486cb6a4",
+        "resourceGroup": "dev-opencga-hdinsight"
+      }
+    ],
+    "outputs": {
+      "aciSubnetId": {
+        "type": "String",
+        "value": "/subscriptions/db9a0ed2-1841-4d53-b9ce-0e83641192cf/resourceGroups/dev-opencga/providers/Microsoft.Network/virtualNetworks/vnet/subnets/aci"
+      },
+      "aksApiServerAddress": {
+        "type": "String",
+        "value": "opencga-v8c24zsv.hcp.uksouth.azmk8s.io"
+      },
+      "aksClusterName": {
+        "type": "String",
+        "value": "dev-opencga-aks"
+      },
+      "aksDnsServiceIP": {
+        "type": "String",
+        "value": "10.0.100.10"
+      },
+      "aksResourceGroupName": {
+        "type": "String",
+        "value": "dev-opencga"
+      },
+      "hdInsightEnableMonitor": {
+        "type": "String",
+        "value": "az hdinsight monitor enable --name devopencgapakq7e37qbxrw --resource-group dev-opencga-hdinsight --workspace ea6c4e22-cc81-417b-82b6-eba8db9b4e82 --primary-key fgO00T/VDvFZhSdT7P1NDzEpyXMrasRp2Mh+6+KtorIZfyphep27lykzg0GsWuXh9ARWG6QQrPFX9DIXmviqwg=="
+      },
+      "hdInsightResourceGroup": {
+        "type": "String",
+        "value": "dev-opencga-hdinsight"
+      },
+      "hdInsightSshDns": {
+        "type": "String",
+        "value": "devopencgapakq7e37qbxrw-ssh.azurehdinsight.net"
+      },
+      "hdInsightSshPassword": {
+        "type": "String",
+        "value": "TSLAzurePoc1!"
+      },
+      "hdInsightSshUsername": {
+        "type": "String",
+        "value": "sshuser"
+      },
+      "mongoDbHostsCSV": {
+        "type": "String",
+        "value": ""
+      },
+      "mongoDbPassword": {
+        "type": "String",
+        "value": "TSLAzurePoc1!"
+      },
+      "mongoDbUser": {
+        "type": "String",
+        "value": "opencgaadmin"
+      },
+      "openCgaAdminPassword": {
+        "type": "String",
+        "value": "TSLAzurePoc1!"
+      },
+      "privateDnsZonesName": {
+        "type": "String",
+        "value": "dev-opencga.zone"
+      },
+      "solrConnectionDetails": {
+        "type": "Array",
+        "value": []
+      },
+      "solrHostsCSV": {
+        "type": "String",
+        "value": ""
+      },
+      "storageAccountKey": {
+        "type": "String",
+        "value": "nH3aw/7nhUfh3DivVbl+hak1a3ns3reqv/hEIeh+7elaX6c0tIHK0WEdXlOEjWsRaqVfakkkKUyq+AStBz+Icw=="
+      },
+      "storageAccountName": {
+        "type": "String",
+        "value": "devopencgapakq7e37qbmain"
+      }
+    },
+    "parameters": {
+      "_artifactsLocation": {
+        "type": "String",
+        "value": "https://devopencgapakq7e37qbarti.blob.core.windows.net/templates"
+      },
+      "_artifactsLocationSasToken": {
+        "type": "String",
+        "value": "?se=2023-08-16T11%3A01Z&sp=r&sv=2021-06-08&sr=c&sig=NKFUqWp50aSQARHRknnxo7jn%2B70nHkolDMGsmlI5nkI%3D"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "opencgaadmin"
+      },
+      "aksClusterName": {
+        "type": "String",
+        "value": "dev-opencga-aks"
+      },
+      "aksServicePrincipalAppId": {
+        "type": "String",
+        "value": "43912bb5-44f7-4e37-8d0d-5639f80d2b89"
+      },
+      "aksServicePrincipalClientSecret": {
+        "type": "String",
+        "value": "TAE8Q~wI05GuqYoHdPt-qoPSxpw4NHqCaPxQZa0e"
+      },
+      "aksServicePrincipalObjectId": {
+        "type": "String",
+        "value": "d7fafacb-c706-44a1-8c53-bb001dc99dc1"
+      },
+      "clusterName": {
+        "type": "String",
+        "value": "dev-opencga"
+      },
+      "customDeploymentSize": {
+        "type": "Object",
+        "value": {}
+      },
+      "deployMongoDB": {
+        "type": "Bool",
+        "value": false
+      },
+      "deployMongoDBAksPool": {
+        "type": "Bool",
+        "value": false
+      },
+      "deploySolr": {
+        "type": "Bool",
+        "value": false
+      },
+      "deploySolrAksPool": {
+        "type": "Bool",
+        "value": false
+      },
+      "deploymentSize": {
+        "type": "Int",
+        "value": 1
+      },
+      "hdInsightClusterLoginPassword": {
+        "type": "SecureString"
+      },
+      "hdInsightClusterName": {
+        "type": "String",
+        "value": "devopencgapakq7e37qbxrw"
+      },
+      "hdInsightSshPassword": {
+        "type": "SecureString"
+      },
+      "hdInsightSshPublicKey": {
+        "type": "SecureString"
+      },
+      "hdInsightStorageAccountBlobName": {
+        "type": "String",
+        "value": "opencga"
+      },
+      "hdInsightStorageAccountName": {
+        "type": "String",
+        "value": "devopencgapakq7e37qbhdi"
+      },
+      "jobsAgentPoolOrVirtualNode": {
+        "type": "String",
+        "value": "AgentPool"
+      },
+      "kubernetesVersion": {
+        "type": "String",
+        "value": "1.27.3"
+      },
+      "location": {
+        "type": "String",
+        "value": "uksouth"
+      },
+      "logAnalyticsWorkspaceName": {
+        "type": "String",
+        "value": "dev-opencgapakq7e37qbxrw"
+      },
+      "loginNode": {
+        "type": "Bool",
+        "value": false
+      },
+      "loginNodePublicIPAddressDNS": {
+        "type": "String",
+        "value": "dev-opencga-pakq7e37qbxrw"
+      },
+      "loginNodeVMSize": {
+        "type": "String",
+        "value": "Standard_D2_v3"
+      },
+      "mongoDBPassword": {
+        "type": "SecureString"
+      },
+      "networkCIDR": {
+        "type": "Object",
+        "value": {
+          "aks": {
+            "dnsServiceIP": "10.0.100.10",
+            "dockerBridgeCIDR": "172.17.0.1/16",
+            "serviceCIDR": "10.0.100.0/24"
+          },
+          "vnet": {
+            "addressPrefix": "10.0.0.0/16",
+            "name": "vnet",
+            "subnets": {
+              "aci": {
+                "addressPrefix": "10.0.4.0/22",
+                "name": "aci"
+              },
+              "hdinsight": {
+                "addressPrefix": "10.0.8.0/24",
+                "name": "hdinsight",
+                "nsg": {
+                  "name": "nsg-dev-opencga-hdi"
+                }
+              },
+              "kubernetes": {
+                "addressPrefix": "10.0.0.0/22",
+                "name": "kubernetes"
+              },
+              "login": {
+                "addressPrefix": "10.0.12.0/24",
+                "name": "login",
+                "nsg": {
+                  "name": "nsg-dev-opencga-login"
+                }
+              },
+              "mongodb": {
+                "addressPrefix": "10.0.9.0/24",
+                "name": "mongodb"
+              },
+              "solr": {
+                "addressPrefix": "10.0.10.0/24",
+                "name": "solr"
+              }
+            }
+          }
+        }
+      },
+      "nsgNamePrefix": {
+        "type": "String",
+        "value": "nsg-dev-opencga"
+      },
+      "openCgaAdminPassword": {
+        "type": "SecureString"
+      },
+      "privateDnsZonesName": {
+        "type": "String",
+        "value": "dev-opencga.zone"
+      },
+      "rgPrefix": {
+        "type": "String",
+        "value": "dev-opencga"
+      },
+      "skipRoleAssignment": {
+        "type": "Bool",
+        "value": false
+      },
+      "sshAdminKeyData": {
+        "type": "SecureString"
+      },
+      "storageAccountName": {
+        "type": "String",
+        "value": "devopencgapakq7e37qbmain"
+      },
+      "storageNamePrefix": {
+        "type": "String",
+        "value": "devopencgapakq7e37qb"
+      },
+      "uniqueString": {
+        "type": "String",
+        "value": "pakq7e37qbxrw"
+      }
+    },
+    "parametersLink": null,
+    "providers": [
+      {
+        "id": null,
+        "namespace": "Microsoft.Resources",
+        "providerAuthorizationConsentState": null,
+        "registrationPolicy": null,
+        "registrationState": null,
+        "resourceTypes": [
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              "uksouth"
+            ],
+            "properties": null,
+            "resourceType": "resourceGroups",
+            "zoneMappings": null
+          },
+          {
+            "aliases": null,
+            "apiProfiles": null,
+            "apiVersions": null,
+            "capabilities": null,
+            "defaultApiVersion": null,
+            "locationMappings": null,
+            "locations": [
+              null
+            ],
+            "properties": null,
+            "resourceType": "deployments",
+            "zoneMappings": null
+          }
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "templateHash": "8769489431921010309",
+    "templateLink": {
+      "contentVersion": "1.0.0.0",
+      "id": null,
+      "queryString": null,
+      "relativePath": null,
+      "uri": "https://devopencgapakq7e37qbarti.blob.core.windows.net/templates/azuredeploy.json?se=2023-08-16T11%3A01Z&sp=r&sv=2021-06-08&sr=c&sig=NKFUqWp50aSQARHRknnxo7jn%2B70nHkolDMGsmlI5nkI%3D"
+    },
+    "timestamp": "2023-08-16T10:55:08.501430+00:00",
+    "validatedResources": null
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/deployments"
+}

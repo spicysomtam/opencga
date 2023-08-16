@@ -1,0 +1,59 @@
+# 20230816115828
+# Auto generated file from deployment output /Users/matthiasbremser/code/work/tsl/github/lifebit/opencga/opencga-app/app/cloud/azure/arm-kubernetes/deploy-20230816113125/deployment-outputs-20230816113129.json
+
+solr:
+  external:
+    hosts: ""
+  deploy:
+    enabled: "false"
+    nodeSelector:
+      agentpool: "default"
+    zookeeper:
+      nodeSelector:
+        agentpool: "default"
+
+mongodb:
+  user: "opencgaadmin"
+  password: "TSLAzurePoc1!"
+  ssl: true
+  authenticationDatabase : "admin"
+  authenticationMechanism : "SCRAM-SHA-256"
+  external:
+    hosts: ""
+  deploy:
+    enabled: "false"
+    nodeSelector:
+      agentpool: "default"
+
+hadoop:
+  sshDns: "devopencgapakq7e37qbxrw-ssh.azurehdinsight.net"
+  sshUsername: "sshuser"
+  sshPassword: "TSLAzurePoc1!"
+
+azureStorageAccount:
+  name: "devopencgapakq7e37qbmain"
+  key: "nH3aw/7nhUfh3DivVbl+hak1a3ns3reqv/hEIeh+7elaX6c0tIHK0WEdXlOEjWsRaqVfakkkKUyq+AStBz+Icw=="
+
+opencga:
+  host: "http://opencga.dev-opencga.zone/opencga"
+  admin:
+    password: "TSLAzurePoc1!"
+
+analysis:
+  execution:
+    options:
+      k8s:
+        masterNode: "https://opencga-v8c24zsv.hcp.uksouth.azmk8s.io:443"
+
+rest:
+  ingress:
+    hosts:
+     - ""
+     - "opencga.dev-opencga.zone"
+
+iva:
+  ingress:
+    hosts:
+     - ""
+     - "opencga.dev-opencga.zone"
+
